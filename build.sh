@@ -24,11 +24,10 @@ trap cleanup EXIT SIGINT SIGTERM
 
 main() {
   # Define tool versions
-  DART_SASS_VERSION=1.100.0
+  DART_SASS_VERSION=1.101.0
   GO_VERSION=1.26.4
-  HUGO_VERSION=0.162.1
+  HUGO_VERSION=0.163.1
   NODE_VERSION=26.3.0
- # NODE_VERSION=24.16.0
 
   # Set the build timezone
   export TZ=Europe/Oslo
