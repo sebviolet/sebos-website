@@ -1,8 +1,7 @@
 # French Family site
 
 ### build with Hugo
-
-### Theme based on [Tony Banters(ByTheWay)](https://www.tonybtw.com/)
+### theme cooked by me and Gemini :-)
 
     Current Architecture
     sebviolet/sebos-website/
