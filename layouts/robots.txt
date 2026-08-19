@@ -1,4 +1,4 @@
 User-agent: *
-Disallow: 
-Disallow: /cgi-bin/
-Sitemap: https://www.frenchfamily.fr/sitemap.xml
+Allow: /
+
+Sitemap: {{ "sitemap.xml" | absURL }}

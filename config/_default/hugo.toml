@@ -1,6 +1,7 @@
 baseURL = 'https://www.frenchfamily.fr/'
 title = 'French Family'
 disableHugoGeneratorInject = true
+enableRobotsTXT = true
 
 [languages]
   [languages.fr]
