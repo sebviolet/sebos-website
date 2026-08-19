@@ -5,7 +5,7 @@ date: 2026-04-19T12:00:00+02:00
 draft: false
 description: "Zelda: top 5, des meilleurs tenues de Zelda, Tears of the Kingdom :"
 tags: ["zelda", "top"]
-coverImage: img\shaded_landscape.webp
+coverImage: img/Univers_Zelda/top_tenues.webp
 ---
 
 # Zelda Tears of the kingdom - Top 5 des tenues
