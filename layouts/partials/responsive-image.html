@@ -1,0 +1,13 @@
+{{ $src := .src }}
+{{ $alt := .alt | default "" }}
+{{ $class := .class | default "" }}
+
+{{ $image := resources.Get $src }}
+
+{{ if $image }}
+{{ $resized := $image.Resize "800x webp q80" }}
+<img src="{{ $resized.RelPermalink }}" width="{{ $resized.Width }}" height="{{ $resized.Height }}" alt="{{ $alt }}"
+  class="{{ $class }}" loading="lazy" decoding="async">
+{{ else if $src }}
+<img src="{{ $src | relURL }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy" decoding="async">
+{{ end }}

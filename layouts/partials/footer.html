@@ -1,17 +1,5 @@
 <footer class="site-footer">
-  {{ with site.Menus.footer }}
-  <nav class="footer-nav" aria-label="Footer Navigation">
-    {{ range . }}
-    <a href="{{ .URL }}" 
-       class="nav-link {{ if $.IsMenuCurrent .Menu . }}active{{ end }}" 
-       {{ if $.IsMenuCurrent .Menu . }}aria-current="page"{{ end }}>
-      {{ .Name }}
-    </a>
-    {{ end }}
-  </nav>
-  {{ end }}
-
-  <div class="copyright">
-    &copy; {{ now.Format "2006" }} French Family
+  <div class="footer-container">
+    <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. Fait par sebos et propulsé par <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a>.</p>
   </div>
 </footer>

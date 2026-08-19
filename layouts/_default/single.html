@@ -1,52 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+{{ define "main" }}
+<article class="post-container">
+  <header class="post-header">
+    <div class="card-meta">
+      <span class="badge badge-{{ .Type }}">{{ .Type }}</span>
+      <time datetime="{{ .Date.Format " 2026-01-02"
+        }}">{{ .Date.Format (.Site.Params.dateFormat | default "02/01/2026") }}</time>
+    </div>
+    <h1 class="post-title" style="font-size: 2.5rem; font-weight: 800; margin: 0.5rem 0 1rem 0;">{{ .Title }}</h1>
+  </header>
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="French Family" />
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}French Family website.{{ end }}" />
-    <link rel="icon" type="image/png" href="/img/favicon.png" />
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    <link rel="stylesheet" href="/css/site.css" media="all" blocking="render" />
-    <meta name="google-site-verification" content="h5E8n8rwJIvHRQ93GxPofJgdvs95pKfjAIsFW27VpXM" />
-  </head>
+  {{ with .Params.coverImage }}
+  <div class="post-cover">
+    {{ partial "responsive-image.html" (dict "src" . "alt" $.Title "class" "post-cover-image") }}
+  </div>
+  {{ end }}
 
-  <body>
-
-    {{ partial "header.html" . }}
-
-    <main class="container">
-      <div class="site-post-wrapper">
-        <!-- Main Content -->
-        <div class="site-post-main">
-          <article class="site-post">
-            <h1 class="site-post-title center">{{ .Title }}</h1>
-            {{ with .Params.image }}
-            <div class="post-hero">
-              <img src="{{ . | relURL }}" alt="{{ $.Title }}" loading="lazy" />
-            </div>
-            {{ end }}
-            <div id="content" class="mb-10">
-              {{ .Content }}
-            </div>
-          </article>
-        </div>
-        {{ if gt (len .TableOfContents) 80 }}
-        <aside class="content-panel site-post-toc-aside">
-          <div class="pb-3">
-            <strong class="text-xl">Table of Contents</strong>
-          </div>
-          <div id="tableOfContentContainer" class="toc-container">
-            {{ .TableOfContents }}
-          </div>
-        </aside>
-        {{ end }}
-      </div>
-    </main>
-
-    {{ partial "footer.html" . }}
-
-  </body>
-
-</html>
+  <div class="post-content">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

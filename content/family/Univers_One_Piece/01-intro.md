@@ -5,7 +5,7 @@ date: 2026-04-08T12:00:00+02:00
 draft: false
 description: "Introduction à l'univers de One Piece : l'histoire et les personnages principaux"
 tags: ["OnePiece", "intro"]
-image: img/Univers_One_Piece/one_piece_intro.webp
+coverImage: img/Univers_One_Piece/one_piece_intro.webp
 ---
 
 # Introduction à l'univers de One Piece : l'histoire et les personnages principaux

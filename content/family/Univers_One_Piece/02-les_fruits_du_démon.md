@@ -5,7 +5,7 @@ date: 2026-04-08T12:00:00+02:00
 draft: false
 description: "Les fruits du Démon : pouvoirs et mythologie dans One Piece"
 tags: ["OnePiece", "fruits du démon"]
-image: img/Univers_One_Piece/luffy_fruit_du_demon.webp
+coverImage: img/Univers_One_Piece/luffy_fruit_du_demon.webp
 ---
 
 # Les fruits du Démon : pouvoirs et mythologie dans One Piece

@@ -5,7 +5,7 @@ date: 2026-04-08T12:00:00+02:00
 draft: false
 description: "Les îles et les royaumes de One Piece : exploration des lieux mythiques"
 tags: ["OnePiece", "royaume"]
-image: img/Univers_One_Piece/one_piece_map.webp
+coverImage: img/Univers_One_Piece/one_piece_map.webp
 ---
 
 # Les îles et les royaumes de One Piece : exploration des lieux mythiques

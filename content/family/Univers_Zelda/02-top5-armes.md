@@ -5,7 +5,7 @@ date: 2026-04-19T12:00:00+02:00
 draft: false
 description: "Zelda: top 5, des meilleurs armes de Zelda, Tears of the Kingdom :"
 tags: ["zelda", "top"]
-image: https://static1.millenium.org/articles/4/40/31/44/@/1693705-divinite1-article_m-2.jpg
+coverImage: img\shaded_landscape.webp
 ---
 
 # Zelda Tears of the kingdom - Top 5 des armes

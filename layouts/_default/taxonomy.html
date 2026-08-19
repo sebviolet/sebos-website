@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="taxonomy-container">
+  <h1>Terme : {{ .Title }}</h1>
+
+  <ul class="taxonomy-list">
+    {{ range .Pages }}
+    <li>
+      <time>{{ .Date.Format "02/01/2026" }}</time> -
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

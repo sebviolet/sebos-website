@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="list-container">
+  <header style="margin-bottom: 2.5rem;">
+    <h1 style="font-size: 2rem; font-weight: 800;">{{ .Title }}</h1>
+    {{ with .Description }}
+    <p style="color: var(--text-secondary);">{{ . }}</p>{{ end }}
+  </header>
+
+  <div class="post-grid">
+    {{ $paginator := .Paginator 9 }}
+    {{ range $paginator.Pages }}
+    <article class="card">
+      {{ with .Params.coverImage }}
+      <a href="{{ $.RelPermalink }}" class="card-image-container">
+        {{ partial "responsive-image.html" (dict "src" . "alt" $.Title) }}
+      </a>
+      {{ end }}
+      <div class="card-body">
+        <div class="card-meta">
+          <time datetime="{{ .Date.Format " 2006-01-02"
+            }}">{{ .Date.Format ($.Site.Params.dateFormat | default "02/01/2026") }}</time>
+        </div>
+        <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p class="card-summary">{{ .Summary | truncate 110 }}</p>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+
+  {{ partial "pagination.html" . }}
+</div>
+{{ end }}

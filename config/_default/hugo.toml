@@ -1,31 +1,43 @@
 baseURL = 'https://www.frenchfamily.fr/'
 title = 'French Family'
-locale = 'fr-fr'
-buildFuture = true
 disableHugoGeneratorInject = true
-enableRobotsTXT = true
 
-[markup.highlight]
-  style = "catppuccin-mocha"
-  noClasses = true
+[languages]
+  [languages.fr]
+    direction = ''
+    disabled = false
+    label = ''
+    locale = ''
+    title = ''
+    weight = 0
+
+[params]
+  description = "Site familial & blog technique"
+  author = "Seb"
+  dateFormat = "02/01/2026"
+
+[build]
+  writeStats = true
+
+[imaging]
+  resampleFilter = "lanczos"
+  quality = 80
 
 [taxonomies]
+  category = 'categories'
   tag = 'tags'
 
-[menus]
-  #[[menus.main]]
-  #  name = 'Home'
-  #  pageRef = '/'
-  #  weight = 10
-  [[menus.main]]
-    name = 'About'
-    pageRef = '/about/'
-    weight = 10
-  [[menus.main]]
-    name = 'Univers One Piece'
-    pageRef = '/posts/Univers_One_Piece/'
-    weight = 20
-  [[menus.main]]
-    name = 'Univers Zelda'
-    pageRef = '/posts/Univers_Zelda/'
-    weight = 30
+[[menus.main]]
+  name = 'Accueil'
+  pageRef = '/'
+  weight = 10
+
+[[menus.main]]
+  name = 'Famille & Passions'
+  pageRef = '/family'
+  weight = 20
+
+[[menus.main]]
+  name = 'Blog Technique'
+  pageRef = '/tech'
+  weight = 30

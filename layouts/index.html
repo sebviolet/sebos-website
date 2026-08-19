@@ -1,55 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+{{ define "main" }}
+<section class="hero" style="margin-bottom: 3rem;">
+  <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">{{ .Site.Title }}</h1>
+  <p style="font-size: 1.2rem; color: var(--text-secondary); margin: 0;">{{ .Site.Params.description }}</p>
+</section>
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="French Family" />
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}French Family website.{{ end }}" />
-    <link rel="icon" type="image/png" href="/img/favicon.png" />
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    <link rel="stylesheet" href="/css/site.css" media="all" blocking="render" />
-    <meta name="google-site-verification" content="h5E8n8rwJIvHRQ93GxPofJgdvs95pKfjAIsFW27VpXM" />
-  </head>
-
-  <body>
-
-    {{ partial "header.html" . }}
-
-    <main class="container">
-      <h1 class="site-post-title center">
-        A propos de la <span class="cyn-text">French Family</span>.
-      </h1>
-      <p class="homepage-description">
-        Ce site est dédié à la famille surnommée "La French Family".
-      </p>
-      <section class="recent-articles-section">
-        <h2 class="recent-articles-title">
-          Derniers Articles
-        </h2>
-        <div class="recent-tutorials-grid">
-          {{ $recent := first 3 (where site.RegularPages.ByDate.Reverse "Section" "posts") }}
-          {{ range $recent }}
-          {{ $page := . }}
-          <div class="tutorial-card">
-            {{ with $page.Params.image }}
-            <a href="{{ $page.RelPermalink }}">
-              <img src="{{ . }}" alt="{{ $page.Title }}" class="tutorial-card-image" loading="lazy" width="300" />
-            </a>
-            {{ end }}
-            <h4 class="tutorial-card-title">
-              <a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a>
-            </h4>
-            <p class="tutorial-card-date">{{ $page.Date.Format "January 2, 2026" }}</p>
-            <p class="tutorial-card-description">{{ $page.Description }}</p>
-          </div>
-          {{ end }}
+<section class="latest-posts">
+  <h2 class="section-title">Publications Récentes</h2>
+  <div class="post-grid">
+    {{ range first 6 (where .Site.RegularPages "Type" "in" (slice "family" "tech" "posts")) }}
+    <article class="card">
+      {{ with .Params.coverImage }}
+      <a href="{{ $.RelPermalink }}" class="card-image-container">
+        {{ partial "responsive-image.html" (dict "src" . "alt" $.Title) }}
+      </a>
+      {{ end }}
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="badge badge-{{ .Type }}">{{ .Type }}</span>
+          <time datetime="{{ .Date.Format " 2006-01-02"
+            }}">{{ .Date.Format ($.Site.Params.dateFormat | default "02/01/2006") }}</time>
         </div>
-      </section>
-    </main>
-
-    {{ partial "footer.html" . }}
-
-  </body>
-
-</html>
+        <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+        <p class="card-summary">{{ .Summary | truncate 100 }}</p>
+      </div>
+    </article>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
