@@ -1,29 +1,28 @@
 {{ define "main" }}
 <div class="list-container">
-  <header style="margin-bottom: 2.5rem;">
-    <h1 style="font-size: 2rem; font-weight: 800;">{{ .Title }}</h1>
-    {{ with .Description }}
-    <p style="color: var(--text-secondary);">{{ . }}</p>{{ end }}
+  <header class="page-header">
+    <h1>{{ .Title }}</h1>
+    {{ with .Description }}<p class="page-description">{{ . }}</p>{{ end }}
   </header>
 
-  <div class="post-grid">
-    {{ $paginator := .Paginator 9 }}
-    {{ range $paginator.Pages }}
-    <article class="card">
-      {{ with .Params.coverImage }}
-      <a href="{{ $.RelPermalink }}" class="card-image-container">
-        {{ partial "responsive-image.html" (dict "src" . "alt" $.Title) }}
+  {{ if .Sections }}
+  <section class="subsections" style="margin-bottom: 2.5rem;">
+    <h2 class="section-title">Univers &amp; Thématiques</h2>
+    <div class="universe-pills">
+      {{ range .Sections }}
+      <a href="{{ .RelPermalink }}" class="universe-pill">
+        <strong>{{ .Title }}</strong>
+        <span>{{ len .RegularPages }} article{{ if gt (len .RegularPages) 1 }}s{{ end }}</span>
       </a>
       {{ end }}
-      <div class="card-body">
-        <div class="card-meta">
-          <time datetime="{{ .Date.Format " 2006-01-02"
-            }}">{{ .Date.Format ($.Site.Params.dateFormat | default "02/01/2026") }}</time>
-        </div>
-        <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-        <p class="card-summary">{{ .Summary | truncate 110 }}</p>
-      </div>
-    </article>
+    </div>
+  </section>
+  {{ end }}
+
+  <div class="post-grid">
+    {{ $paginator := .Paginate .RegularPagesRecursive 9 }}
+    {{ range $paginator.Pages }}
+      {{ partial "post-card.html" . }}
     {{ end }}
   </div>
 

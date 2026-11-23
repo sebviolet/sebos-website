@@ -1,7 +1,18 @@
-<meta name="description"
-    content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description | default .Summary }}{{ end }}">
+{{- $desc := .Site.Params.description -}}
+{{- if not .IsHome -}}
+  {{- $desc = (.Description | default .Summary) | plainify | truncate 160 -}}
+{{- end -}}
+<meta name="description" content="{{ $desc }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="{{ .Site.Language.Locale | default "fr_FR" }}">
 <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }}{{ end }}">
-<meta property="og:description"
-    content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description | default .Summary }}{{ end }}">
+<meta property="og:description" content="{{ $desc }}">
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
+{{- with .Params.coverImage -}}
+  {{- $img := $.Resources.GetMatch . -}}
+  {{- if not $img }}{{ $img = resources.Get . }}{{ end -}}
+  {{- if $img -}}
+<meta property="og:image" content="{{ $img.Permalink }}">
+  {{- end -}}
+{{- end -}}

@@ -1,32 +1,40 @@
 baseURL = 'https://www.frenchfamily.fr/'
 title = 'French Family'
+defaultContentLanguage = 'fr'
 disableHugoGeneratorInject = true
 enableRobotsTXT = true
 
 [languages]
   [languages.fr]
-    direction = ''
-    disabled = false
-    label = ''
-    locale = ''
-    title = ''
-    weight = 0
+    locale = 'fr-FR'
+    label = 'Français'
+    weight = 1
 
 [params]
-  description = "Site familial & blog technique"
-  author = "Seb"
-  dateFormat = "02/01/2026"
+  description = 'Le blog de la famille : univers geek & passions des enfants, labo technique & astuces des parents.'
+  author = 'Seb'
+  dateFormat = '02/01/2006'
 
 [build]
   writeStats = true
 
 [imaging]
-  resampleFilter = "lanczos"
-  quality = 80
+  [imaging.jpeg]
+    quality = 80
+  [imaging.webp]
+    quality = 80
+  [imaging.avif]
+    quality = 80
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
 
 [taxonomies]
   category = 'categories'
   tag = 'tags'
+  author = 'authors'
+  series = 'series'
 
 [[menus.main]]
   name = 'Accueil'
@@ -42,3 +50,8 @@ enableRobotsTXT = true
   name = 'Blog Technique'
   pageRef = '/tech'
   weight = 30
+
+[[menus.main]]
+  name = 'À propos'
+  pageRef = '/about'
+  weight = 40

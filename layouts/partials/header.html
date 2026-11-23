@@ -1,13 +1,6 @@
 <header class="site-header">
   <div class="header-container">
     <a href="{{ "/" | relURL }}" class="site-title">{{ .Site.Title }}</a>
-    <nav class="site-nav">
-      {{ $currentPage := . }}
-      {{ range .Site.Menus.main }}
-        <a class="nav-link {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}" href="{{ .URL | relURL }}">
-          {{ .Name }}
-        </a>
-      {{ end }}
-    </nav>
+    {{ partial "menu.html" . }}
   </div>
 </header>

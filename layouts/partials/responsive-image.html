@@ -1,13 +1,22 @@
-{{ $src := .src }}
-{{ $alt := .alt | default "" }}
-{{ $class := .class | default "" }}
+{{- $src := .src -}}
+{{- $alt := .alt -}}
+{{- $page := .page -}}
 
-{{ $image := resources.Get $src }}
+{{- if or (hasPrefix $src "http://") (hasPrefix $src "https://") -}}
+  <img src="{{ $src }}" alt="{{ $alt }}" loading="lazy" decoding="async">
+{{- else -}}
+  {{- /* Check Page Bundle first, then global assets/ directory */ -}}
+  {{- $img := $page.Resources.GetMatch $src -}}
+  {{- if not $img -}}
+    {{- $img = resources.Get $src -}}
+  {{- end -}}
 
-{{ if $image }}
-{{ $resized := $image.Resize "800x webp q80" }}
-<img src="{{ $resized.RelPermalink }}" width="{{ $resized.Width }}" height="{{ $resized.Height }}" alt="{{ $alt }}"
-  class="{{ $class }}" loading="lazy" decoding="async">
-{{ else if $src }}
-<img src="{{ $src | relURL }}" alt="{{ $alt }}" class="{{ $class }}" loading="lazy" decoding="async">
-{{ end }}
+  {{- if $img -}}
+    {{- /* Keep your existing resize/webp logic here using $img */ -}}
+    {{- $resized := $img.Resize "800x webp" -}}
+    <img src="{{ $resized.RelPermalink }}" alt="{{ $alt }}" width="{{ $resized.Width }}" height="{{ $resized.Height }}" loading="lazy">
+  {{- else -}}
+    {{- /* Fallback if image isn't found in resources */ -}}
+    <img src="{{ $src | relURL }}" alt="{{ $alt }}" loading="lazy">
+  {{- end -}}
+{{- end -}}

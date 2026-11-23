@@ -1,0 +1,8 @@
+{{- $src := .Destination -}}
+{{- $alt := .Text -}}
+<figure class="post-figure">
+  {{ partial "responsive-image.html" (dict "src" $src "alt" $alt "page" .Page) }}
+  {{- with .Title -}}
+    <figcaption>{{ . }}</figcaption>
+  {{- end -}}
+</figure>

@@ -1,6 +1,6 @@
 {{ $paginator := .Paginator }}
 {{ if gt $paginator.TotalPages 1 }}
-<nav class="pagination" style="display: flex; gap: 1rem; margin-top: 2rem;">
+<nav class="pagination" aria-label="Pagination">
   {{ if $paginator.HasPrev }}
   <a href="{{ $paginator.Prev.URL }}" class="pagination-prev">&laquo; Page précédente</a>
   {{ end }}

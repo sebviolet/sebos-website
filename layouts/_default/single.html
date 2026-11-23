@@ -2,21 +2,50 @@
 <article class="post-container">
   <header class="post-header">
     <div class="card-meta">
-      <span class="badge badge-{{ .Type }}">{{ .Type }}</span>
-      <time datetime="{{ .Date.Format " 2026-01-02"
-        }}">{{ .Date.Format (.Site.Params.dateFormat | default "02/01/2026") }}</time>
+      {{ if .Section }}
+      <span class="badge badge-{{ .Section }}">{{ if eq .Section "family" }}Famille{{ else if eq .Section "tech" }}Tech{{ else }}{{ .Section }}{{ end }}</span>
+      {{ end }}
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format (.Site.Params.dateFormat | default "02/01/2006") }}</time>
+      {{ with .Params.author }}<span>&middot; Par <a href="{{ "/authors/" | relURL }}{{ . | urlize }}/"><strong>{{ . }}</strong></a></span>{{ end }}
+      <span>&middot; {{ .ReadingTime }} min de lecture</span>
     </div>
-    <h1 class="post-title" style="font-size: 2.5rem; font-weight: 800; margin: 0.5rem 0 1rem 0;">{{ .Title }}</h1>
+    <h1 class="post-title">{{ .Title }}</h1>
+    {{ with .Description }}<p class="post-lead">{{ . }}</p>{{ end }}
   </header>
 
   {{ with .Params.coverImage }}
   <div class="post-cover">
-    {{ partial "responsive-image.html" (dict "src" . "alt" $.Title "class" "post-cover-image") }}
+    {{ partial "responsive-image.html" (dict "src" . "alt" $.Title "class" "post-cover-image" "page" $) }}
   </div>
   {{ end }}
 
   <div class="post-content">
     {{ .Content }}
   </div>
+
+  {{ with .Params.tags }}
+  <footer class="post-tags">
+    {{ range . }}
+      <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="tag-pill">#{{ . }}</a>
+    {{ end }}
+  </footer>
+  {{ end }}
+
+  {{ if or .PrevInSection .NextInSection }}
+  <nav class="series-nav" aria-label="Navigation dans la série">
+    <div>
+      {{ with .PrevInSection }}
+      <span class="series-label">&larr; Article précédent</span>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ end }}
+    </div>
+    <div style="text-align: right;">
+      {{ with .NextInSection }}
+      <span class="series-label">Article suivant &rarr;</span>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ end }}
+    </div>
+  </nav>
+  {{ end }}
 </article>
 {{ end }}

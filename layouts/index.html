@@ -1,30 +1,47 @@
 {{ define "main" }}
-<section class="hero" style="margin-bottom: 3rem;">
-  <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 0.5rem;">{{ .Site.Title }}</h1>
-  <p style="font-size: 1.2rem; color: var(--text-secondary); margin: 0;">{{ .Site.Params.description }}</p>
+<section class="hero">
+  <div class="hero-content">
+    <span class="hero-eyebrow">Bienvenue chez nous</span>
+    <h1 class="hero-title">{{ .Site.Title }}</h1>
+    <p class="hero-subtitle">{{ .Site.Params.description }}</p>
+    <div class="hero-actions">
+      <a href="{{ "/family/" | relURL }}" class="btn btn-family">Explorer l'Univers Famille</a>
+      <a href="{{ "/tech/" | relURL }}" class="btn btn-tech">Découvrir le Blog Tech</a>
+    </div>
+  </div>
 </section>
 
-<section class="latest-posts">
-  <h2 class="section-title">Publications Récentes</h2>
+{{ $familyPages := where .Site.RegularPages "Section" "family" }}
+{{ if $familyPages }}
+<section class="home-section">
+  <div class="section-header">
+    <h2 class="section-title">Famille &amp; Passions des Enfants</h2>
+    <a href="{{ "/family/" | relURL }}" class="section-more">Tout voir ({{ len $familyPages }}) &rarr;</a>
+  </div>
   <div class="post-grid">
-    {{ range first 6 (where .Site.RegularPages "Type" "in" (slice "family" "tech" "posts")) }}
-    <article class="card">
-      {{ with .Params.coverImage }}
-      <a href="{{ $.RelPermalink }}" class="card-image-container">
-        {{ partial "responsive-image.html" (dict "src" . "alt" $.Title) }}
-      </a>
-      {{ end }}
-      <div class="card-body">
-        <div class="card-meta">
-          <span class="badge badge-{{ .Type }}">{{ .Type }}</span>
-          <time datetime="{{ .Date.Format " 2006-01-02"
-            }}">{{ .Date.Format ($.Site.Params.dateFormat | default "02/01/2006") }}</time>
-        </div>
-        <h3 class="card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-        <p class="card-summary">{{ .Summary | truncate 100 }}</p>
-      </div>
-    </article>
+    {{ range first 4 $familyPages }}
+      {{ partial "post-card.html" . }}
     {{ end }}
   </div>
+</section>
+{{ end }}
+
+{{ $techPages := where .Site.RegularPages "Section" "tech" }}
+<section class="home-section">
+  <div class="section-header">
+    <h2 class="section-title">Blog Technique &amp; Home-Lab</h2>
+    <a href="{{ "/tech/" | relURL }}" class="section-more">Tout voir ({{ len $techPages }}) &rarr;</a>
+  </div>
+  {{ if $techPages }}
+  <div class="post-grid">
+    {{ range first 4 $techPages }}
+      {{ partial "post-card.html" . }}
+    {{ end }}
+  </div>
+  {{ else }}
+  <div class="empty-state">
+    <p>Les premiers articles techniques arrivent très bientôt !</p>
+  </div>
+  {{ end }}
 </section>
 {{ end }}

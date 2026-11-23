@@ -1,11 +1,12 @@
 ---
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
+author: "Mathias"
 date: {{ .Date }}
 draft: true
-type: "family"
-coverImage: ""
+description: ""
+coverImage: "cover.webp"
 categories: ["Famille"]
-tags: ["one-piece", "zelda"]
+tags: []
 ---
 
 Écrivez votre article sur l'univers ou la sortie familiale ici...

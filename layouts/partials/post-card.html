@@ -1,0 +1,24 @@
+{{- $page := . -}}
+<article class="card">
+  {{- with $page.Params.coverImage -}}
+  <a href="{{ $page.RelPermalink }}" class="card-image-container" aria-label="{{ $page.Title }}">
+    {{ partial "responsive-image.html" (dict "src" . "alt" $page.Title "page" $page) }}
+  </a>
+  {{- end -}}
+  <div class="card-body">
+    <div class="card-meta">
+      {{- if $page.Section -}}
+      <span class="badge badge-{{ $page.Section }}">{{ if eq $page.Section "family" }}Famille{{ else if eq $page.Section "tech" }}Tech{{ else }}{{ $page.Section }}{{ end }}</span>
+      {{- end -}}
+      <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format ($page.Site.Params.dateFormat | default "02/01/2006") }}</time>
+      <span>&middot; {{ $page.ReadingTime }} min</span>
+    </div>
+    <h3 class="card-title"><a href="{{ $page.RelPermalink }}">{{ $page.Title }}</a></h3>
+    <p class="card-summary">{{ ($page.Description | default $page.Summary) | plainify | truncate 120 }}</p>
+    {{- with $page.Params.author -}}
+    <div class="card-footer">
+      <span class="card-author">Par <strong>{{ . }}</strong></span>
+    </div>
+    {{- end -}}
+  </div>
+</article>

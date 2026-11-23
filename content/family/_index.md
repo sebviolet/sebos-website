@@ -1,4 +1,4 @@
 ---
 title: "Famille & Passions"
-description: "Articles sur nos univers, sorties et projets familiaux."
+description: "Articles écrits par et pour les enfants : univers manga, jeux vidéo, découvertes et défis créatifs."
 ---

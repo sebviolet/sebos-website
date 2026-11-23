@@ -1,4 +1,4 @@
 ---
 title: "Blog Technique"
-description: "Notes de développement, tutoriels et astuces web."
+description: "Architecture web, Hugo, Cloudflare, auto-hébergement et numérique en famille."
 ---
