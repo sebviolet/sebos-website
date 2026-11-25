@@ -7,7 +7,7 @@ description: "Au-delà des combats épiques, découvre comment chaque membre de 
 categories: ["Famille"]
 series: ["Univers One Piece"]
 tags: ["one-piece", "manga", "anime", "aventure"]
-coverImage: "cover.jpg"
+coverImage: "cover.webp"
 aliases:
   - /family/univers-one-piece/04-equipage-chaqpeur-de-paille/
 ---

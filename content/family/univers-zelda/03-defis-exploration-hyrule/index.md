@@ -7,7 +7,7 @@ description: "Tu as déjà battu Ganondorf ? Voici 5 idées de défis créatifs 
 categories: ["Famille"]
 series: ["Univers Zelda"]
 tags: ["zelda", "top"]
-coverImage: "cover.jpg"
+coverImage: "cover.webp"
 aliases:
   - /family/univers-zelda/03-defis-exploration-hyrule/
 ---

@@ -7,7 +7,7 @@ description: "Souveraineté des données, pérennité des formats et transparenc
 categories: ["Tech"]
 series: ["Culture Open Source"]
 tags: ["open-source", "linux", "hugo", "git", "souverainete"]
-coverImage: "cover.jpg"
+coverImage: "cover.webp"
 aliases:
   - /tech/02-philisophie-open-source-au-quotidien/
 ---
