@@ -12,8 +12,8 @@ enableRobotsTXT = true
 
 [params]
   description = 'Le blog de la famille : univers geek & passions des enfants, labo technique & astuces des parents.'
-  author = 'Seb'
-  dateFormat = '02/01/2006'
+  authors = 'Sebos'
+  dateFormat = '01/11/2026'
 
 [build]
   writeStats = true

@@ -1,15 +1,15 @@
 ---
 title: "Les fruits du Démon"
-author: "Mathias"
+authors: "Mathias"
 date: 2026-04-08T12:05:00+02:00
 draft: false
 description: "Les fruits du Démon : pouvoirs et mythologie dans One Piece."
 categories: ["Famille"]
 series: ["Univers One Piece"]
-tags: ["OnePiece", "fruits du démon"]
+tags: ["onepiece", "fruits du démon"]
 coverImage: "cover.webp"
 aliases:
-  - /family/univers_one_piece/02-les_fruits_du_démon/
+  - /family/univers-one-piece/02-les-fruits-du-démon/
 ---
 
 Les **Fruits du Démon** sont des fruits mystérieux qui confèrent des pouvoirs spéciaux à ceux qui les consomment, mais en échange, on ne peut plus jamais nager : on coule comme une pierre !

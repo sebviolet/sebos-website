@@ -1,6 +1,6 @@
 ---
 title: "Introduction à l'univers One Piece"
-author: "Mathias"
+authors: "Mathias"
 date: 2026-04-08T12:00:00+02:00
 draft: false
 description: "Introduction à l'univers de One Piece : l'histoire et les personnages principaux."
@@ -9,7 +9,7 @@ series: ["Univers One Piece"]
 tags: ["OnePiece", "intro"]
 coverImage: "cover.webp"
 aliases:
-  - /family/univers_one_piece/01-intro/
+  - /family/univers-one-piece/01-intro/
 ---
 
 **One Piece** est une série manga et anime créée par Eiichiro Oda, qui raconte l'aventure de Monkey D. Luffy et de son équipage de pirates à la recherche du légendaire trésor, le **One Piece**.

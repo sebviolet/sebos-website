@@ -1,6 +1,6 @@
 ---
 title: "Zelda: Tears of the Kingdom - Top 5 des tenues"
-author: "Maxime"
+authors: "Maxime"
 date: 2026-04-19T12:00:00+02:00
 draft: false
 description: "Mon classement des 5 meilleures tenues de The Legend of Zelda: Tears of the Kingdom."
@@ -9,7 +9,7 @@ series: ["Univers Zelda"]
 tags: ["zelda", "top"]
 coverImage: "cover.webp"
 aliases:
-  - /family/univers_zelda/01-top5-tenues/
+  - /family/univers-zelda/01-top5-tenues/
 ---
 
 Voici ma liste, sous forme de top, des 5 meilleures tenues de *Zelda: Tears of the Kingdom* :

@@ -1,12 +1,12 @@
 ---
 title: "{{ replace .File.ContentBaseName "-" " " | title }}"
-author: "Seb"
+authors: "Seb"
 date: {{ .Date }}
 draft: true
 description: ""
 coverImage: "cover.webp"
 categories: ["Tech"]
-tags: ["hugo", "homelab"]
+tags: ["tech", "homelab"]
 ---
 
 Écrivez votre article technique ou note d'architecture ici...

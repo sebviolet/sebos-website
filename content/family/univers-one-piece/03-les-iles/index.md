@@ -1,15 +1,15 @@
 ---
 title: "Les îles et les royaumes de One Piece"
-author: "Mathias"
+authors: "Mathias"
 date: 2026-04-08T12:10:00+02:00
 draft: false
 description: "Les îles et les royaumes de One Piece : exploration des lieux mythiques."
 categories: ["Famille"]
 series: ["Univers One Piece"]
-tags: ["OnePiece", "royaume"]
+tags: ["onepiece", "royaume"]
 coverImage: "cover.webp"
 aliases:
-  - /family/univers_one_piece/03-les_iles/
+  - /family/univers-one-piece/03-les-iles/
 ---
 
 L'univers de One Piece est constitué d'une multitude d'îles et de royaumes, chacun avec sa culture, ses paysages et ses enjeux.

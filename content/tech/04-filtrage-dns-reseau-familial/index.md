@@ -1,12 +1,14 @@
 ---
 title: "Filtrer les publicités et sécuriser le réseau familial au niveau DNS"
-author: "Seb"
+authors: "Sebos"
 date: 2026-11-22T18:30:00+01:00
 draft: false
 description: "Comment bloquer les traqueurs, les publicités intrusives et les contenus inappropriés sur tous les appareils de la maison grâce au DNS."
 categories: ["Tech"]
 tags: ["reseau", "dns", "securite", "parentalite-numerique"]
 coverImage: "cover.webp"
+aliases:
+  - /tech/04-filtrage-dns-reseau-familial/
 ---
 
 Installer un bloqueur de publicités sur chaque ordinateur, tablette, smartphone et console de la maison devient vite ingérable. La solution la plus propre et la plus légère consiste à agir directement au niveau de la **résolution DNS**.

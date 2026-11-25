@@ -1,12 +1,14 @@
 ---
 title: "Sous le capot : comment nous hébergeons FrenchFamily avec Hugo et Cloudflare"
-author: "Seb"
+authors: "Sebos"
 date: 2026-11-21T10:00:00+01:00
 draft: false
 description: "Retour d'expérience sur l'architecture statique du blog : Hugo sans thème externe, Page Bundles et déploiement sur Cloudflare Workers."
 categories: ["Tech"]
 tags: ["hugo", "cloudflare", "architecture", "webdev"]
 coverImage: "cover.webp"
+aliases:
+  - /tech/03-architecture-hugo-cloudflare/
 ---
 
 Pour créer un blog familial durable, rapide et sans maintenance lourde, le choix d'un générateur de site statique s'est vite imposé face à un CMS traditionnel (base de données à sauvegarder, mises à jour de sécurité permanentes, hébergement coûteux).

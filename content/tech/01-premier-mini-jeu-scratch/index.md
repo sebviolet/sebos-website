@@ -1,13 +1,15 @@
 ---
 title: "Créer ton premier mini-jeu d'arcade avec Scratch en 20 minutes"
-author: "Ethan"
+authors: "Sebos"
 date: 2026-11-20T14:00:00+01:00
 draft: false
 description: "Un défi pas à pas pour coder ton propre jeu d'esquive de météorites dans ton navigateur."
-categories: ["Famille"]
+categories: ["Tech"]
 series: ["Découverte du Code"]
 tags: ["code", "scratch", "jeu-video"]
 coverImage: "cover.webp"
+aliases:
+  - /tech/01-premier-mini-jeu-scratch/
 ---
 
 Tu joues souvent à des jeux vidéo, mais sais-tu que tu peux fabriquer le tien en moins de 20 minutes directement dans ton navigateur ? Aujourd'hui, on crée un jeu spatial où ton vaisseau doit esquiver des météorites pour gagner des points !
