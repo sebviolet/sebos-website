@@ -9,7 +9,7 @@ series: ["Univers One Piece"]
 tags: ["one-piece", "manga", "anime", "aventure"]
 coverImage: "cover.webp"
 aliases:
-  - /family/univers-one-piece/04-equipage-chaqpeur-de-paille/
+  - /family/univers-one-piece/04-equipage-chapeau-de-paille/
 ---
 
 Dans *One Piece*, Luffy répète souvent qu'il ne sait pas cuisiner, ni naviguer, ni manier une épée. C'est justement pour cela qu'il a réuni l'équipage le plus complémentaire des mers ! Sur Grand Line, la force brute ne suffit jamais : chaque membre possède un talent indispensable pour survivre.
